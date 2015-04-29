@@ -67,7 +67,6 @@ class Page extends \yii\db\ActiveRecord
             [['meta_keywords'], 'string', 'max' => 200],
             [['meta_description'], 'string', 'max' => 160],
             [['alias'], 'unique'],
-            [['published'], 'default', 'value' => self::PUBLISHED_NO],
         ];
     }
 
