@@ -123,7 +123,7 @@ class ManagerController extends Controller
             Yii::$app->session->setFlash('success', Module::t('SAVE_SUCCESS'));
             return $this->redirect(['update', 'id' => $model->id]);
         } 
-        return $this->render('update', [
+        return $this->render($id === null ? 'create' : 'update', [
             'model' => $model,
         ]);
     }
