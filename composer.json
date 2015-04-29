@@ -3,15 +3,19 @@
     "description": "Module implements CRUD with static pages. ",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","static","pages","module"],
+    "homepage": "https://github.com/bupy7/yii2-pages",
     "license": "BSD-3-Clause",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Belosludcev Vasilij",
-            "email": "bupy765@gmail.com"
+            "email": "bupy765@gmail.com",
+            "homepage": "http://mihaly4.ru"
         }
     ],
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "@dev"
     },
     "autoload": {
         "psr-4": {
