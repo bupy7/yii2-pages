@@ -17,12 +17,12 @@ class DefaultController extends Controller
     
     /**
      * View of page by alias.
-     * @param string $alias Alias of page.
+     * @param string $page Alias of page.
      * @see Page::$alias
      */
-    public function actionIndex($alias)
+    public function actionIndex($page)
     {
-        $model = $this->findModel($alias);
+        $model = $this->findModel($page);
         return $this->render('index', [
             'model' => $model,
         ]);

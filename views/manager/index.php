@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'published',
             'filter' => Page::publishedDropDownList(),
             'value' => function($model) {
-                Yii::$app->formatter->asBoolean($model->published);
+                return Yii::$app->formatter->asBoolean($model->published);
             },
         ],
         [
