@@ -4,6 +4,7 @@ namespace bupy7\pages\models;
 
 use Yii;
 use bupy7\pages\Module;
+use yii\behaviors\SluggableBehavior;
 
 /**
  * This is the model class for table "{{%pages}}".
@@ -30,6 +31,20 @@ class Page extends \yii\db\ActiveRecord
      * Value of 'published' field where page is published.
      */
     const PUBLISHED_YES = 1;
+    
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'title',
+                'slugAttribute' => 'alias',
+            ]
+        ];
+    }
     
     /**
      * @inheritdoc

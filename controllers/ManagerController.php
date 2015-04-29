@@ -16,6 +16,9 @@ use bupy7\pages\Module;
 class ManagerController extends Controller
 {
     
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
@@ -101,4 +104,5 @@ class ManagerController extends Controller
         }
         throw new NotFoundHttpException(Module::t('PAGE_NOT_FOUND'));
     }
+    
 }

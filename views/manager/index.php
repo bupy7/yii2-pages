@@ -19,6 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Html::a(Module::t('CREATE'), ['create'], ['class' => 'btn btn-success']); ?>
 </p>
 <?= GridView::widget([
+    'tableOptions' => [
+        'class' => 'table table-striped',
+    ],
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => [
@@ -26,6 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'id',
         'title',
         'alias',
+        'created_at:datetime',
+        'updated_at:datetime',
         [
             'attribute' => 'published',
             'filter' => Page::publishedDropDownList(),
@@ -33,8 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 Yii::$app->formatter->asBoolean($model->published);
             },
         ],
-        'created_at:datetime',
-        'updated_at:datetime',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => "{update}\n{delete}",
