@@ -25,6 +25,7 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
+        $this->registerTranslations();
     }
     
     /**
@@ -35,6 +36,7 @@ class Module extends \yii\base\Module
         Yii::$app->i18n->translations['bupy7/pages/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en',
+            'forceTranslation' => true,
             'basePath' => '@bupy7/pages/messages',
             'fileMap' => [
                 'bupy7/pages/core' => 'core.php',
