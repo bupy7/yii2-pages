@@ -3,16 +3,47 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use bupy7\pages\Module;
+use vova07\imperavi\Widget as Imperavi;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model bupy7\pages\models\Page */
 /* @var $form yii\widgets\ActiveForm */
 
+$module = Yii::$app->getModule('pages');
+
 $form = ActiveForm::begin();
 echo $form->field($model, 'title')->textInput(['maxlength' => 255]);
 echo $form->field($model, 'alias')->textInput(['maxlength' => 255]);
 echo $form->field($model, 'published')->checkbox();
-echo $form->field($model, 'content')->textarea(['rows' => 6]);
+$settings = [
+    'lang' => Yii::$app->language,
+    'minHeight' => 200,
+    'plugins' => [
+        'fullscreen',
+    ],
+];
+if ($module->addImage || $module->uploadImage) {
+    $settings['plugins'][] = 'imagemanager';
+}
+if ($module->addImage) {
+    $settings['imageManagerJson'] = Url::to($module->imagesGetAction);
+}
+if ($module->uploadImage) {
+    $settings['imageUpload'] = Url::to($module->imageUploadAction);
+}
+if ($module->addFile || $module->uploadFile) {
+    $settings['plugins'][] = 'filemanager';
+}
+if ($module->addFile) {
+    $settings['fileManagerJson'] = Url::to($module->filesGetAction);
+}
+if ($module->uploadFile) {
+    $settings['fileUpload'] = Url::to($module->fileUploadAction);
+}
+echo $form->field($model, 'content')->widget(Imperavi::className(), [
+    'settings' => $settings,
+]);
 echo $form->field($model, 'title_browser')->textInput(['maxlength' => 255]);
 echo $form->field($model, 'meta_keywords')->textInput(['maxlength' => 200]);
 echo $form->field($model, 'meta_description')->textInput(['maxlength' => 160]);

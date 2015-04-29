@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use bupy7\pages\Module;
+use vova07\imperavi\actions\GetAction as ImperaviGetAction;
+use vova07\imperavi\actions\UploadAction as ImperaviUploadAction;
 
 /**
  * ManagerController implements the CRUD actions for Page model.
@@ -29,6 +31,53 @@ class ManagerController extends Controller
                 ],
             ],
         ];
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        $module = Yii::$app->getModule('pages');
+        
+        $actions = [];
+        
+        // add images that have already been uploaded
+        if ($module->addImage) {
+            $actions['images-get'] = [
+                'class' => ImperaviGetAction::className(),
+                'url' => Yii::getAlias($module->urlToImages),
+                'path' => Yii::getAlias($module->pathToImages),
+                'type' => ImperaviGetAction::TYPE_IMAGES,
+            ];
+        }
+        // upload image
+        if ($module->uploadImage) {
+            $actions['image-upload'] = [
+                'class' => ImperaviUploadAction::className(),
+                'url' => Yii::getAlias($module->urlToImages),
+                'path' => Yii::getAlias($module->pathToImages),
+            ];
+        }
+        // add files that have already been uploaded
+        if ($module->addFile) {
+            $actions['files-get'] = [
+                'class' => ImperaviGetAction::className(),
+                'url' => Yii::getAlias($module->urlToFiles),
+                'path' => Yii::getAlias($module->pathToFiles),
+                'type' => ImperaviGetAction::TYPE_FILES,
+            ];
+        }
+        // upload file
+        if ($module->uploadFile) {
+            $actions['file-upload'] = [
+                'class' => ImperaviUploadAction::className(),
+                'url' => Yii::getAlias($module->urlToFiles),
+                'path' => Yii::getAlias($module->pathToFiles),
+            ];
+        }
+        
+        return $actions;
     }
 
     /**

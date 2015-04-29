@@ -16,7 +16,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "@dev",
-        "vova07/yii2-imperavi-widget": "*"
+        "vova07/yii2-imperavi-widget": "1.2.2"
     },
     "autoload": {
         "psr-4": {
