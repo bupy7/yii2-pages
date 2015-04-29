@@ -20,6 +20,8 @@ return [
     'CREATE' => 'Create',
     'UPDATE' => 'Update',
     'MODULE_NAME' => 'Pages',
+    'SAVE_SUCCESS' => 'Saving was completed successfully!',
+    'DELETE_SUCCESS' => 'Deleting was completed successfully!',
 ];
 
 

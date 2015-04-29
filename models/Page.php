@@ -60,13 +60,14 @@ class Page extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'alias'], 'required'],
+            [['title'], 'required'],
             [['published'], 'boolean'],
             [['content'], 'string', 'max' => 65535],
             [['title', 'alias', 'title_browser'], 'string', 'max' => 255],
             [['meta_keywords'], 'string', 'max' => 200],
             [['meta_description'], 'string', 'max' => 160],
             [['alias'], 'unique'],
+            [['published'], 'default', 'value' => self::PUBLISHED_NO],
         ];
     }
 

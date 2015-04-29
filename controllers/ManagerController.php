@@ -71,6 +71,7 @@ class ManagerController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', Module::t('SAVE_SUCCESS'));
             return $this->redirect(['update', 'id' => $model->id]);
         } 
         return $this->render('update', [
@@ -86,7 +87,9 @@ class ManagerController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        if ($this->findModel($id)->delete()) {
+            Yii::$app->session->setFlash('success', Module::t('DELETE_SUCCESS'));
+        }
         return $this->redirect(['index']);
     }
 
