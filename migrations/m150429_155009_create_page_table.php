@@ -43,8 +43,8 @@ class m150429_155009_create_page_table extends Migration
                 'title_browser' => Schema::TYPE_STRING,
                 'meta_keywords' => Schema::TYPE_STRING . '(200)',
                 'meta_description' => Schema::TYPE_STRING . '(160)',
-                'created_at' => Schema::TYPE_TIMESTAMP . ' DEFAULT CURRENT_TIMESTAMP',
-                'updated_at' => Schema::TYPE_TIMESTAMP . ' DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
+                'created_at' => Schema::TYPE_TIMESTAMP,
+                'updated_at' => Schema::TYPE_TIMESTAMP,
             ]
         );
         $this->createIndex('alias', $this->_tableName, ['alias'], true);

@@ -5,6 +5,9 @@ namespace bupy7\pages\models;
 use Yii;
 use bupy7\pages\Module;
 use yii\behaviors\SluggableBehavior;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "{{%pages}}".
@@ -20,7 +23,7 @@ use yii\behaviors\SluggableBehavior;
  * @property string $created_at
  * @property string $updated_at
  */
-class Page extends \yii\db\ActiveRecord
+class Page extends ActiveRecord
 {
     
     /**
@@ -43,7 +46,15 @@ class Page extends \yii\db\ActiveRecord
                 'attribute' => 'title',
                 'slugAttribute' => 'alias',
                 'immutable' => true,
-            ]
+            ],
+            [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
         ];
     }
     
