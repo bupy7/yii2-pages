@@ -27,20 +27,10 @@ class Module extends \yii\base\Module
     public $addImage = false;
     
     /**
-     * @var mixed Action of images add. By default 'images-get' to 'bupy7/pages/controllers/ManagerController'.
-     */
-    public $imagesGetAction = ['images-get'];
-    
-    /**
      * @var boolean Enable ability upload images via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToImages', '$urlToImages' and '$imageUploadAction'.
      */
     public $uploadImage = false;
-    
-    /**
-     * @var mixed Action of images upload. By default 'image-upload' to 'bupy7/pages/controllers/ManagerController'.
-     */
-    public $imageUploadAction = ['image-upload'];
     
     /**
      * @var string Alias of absolute path to directory with images for upload images via Imperavi Redactor. If not 
@@ -65,20 +55,10 @@ class Module extends \yii\base\Module
     public $addFile = false;
     
     /**
-     * @var mixed Action of files add. By default 'files-get' to 'bupy7/pages/controllers/ManagerController'.
-     */
-    public $filesGetAction = ['files-get'];
-    
-    /**
      * @var boolean Enable ability upload files via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToFiles', '$urlToFiles' and '$fileUploadAction'.
      */
     public $uploadFile = false;
-    
-    /**
-     * @var mixed Action of files upload. By default 'file-upload' to 'bupy7/pages/controllers/ManagerController'.
-     */
-    public $fileUploadAction = ['file-upload'];
     
     /**
      * @var string Alias of absolute path to directory with files for upload files via Imperavi Redactor. If not set, 
@@ -102,22 +82,14 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-        if ($this->addImage && !($this->imagesGetAction && $this->pathToImages && $this->urlToImages)) {
-            throw new InvalidConfigException("For add image via Imperavi Redactor you must be set 'imagesGetAction',"
+        if (($this->addImage || $this->uploadImage) && !($this->pathToImages && $this->urlToImages)) {
+            throw new InvalidConfigException("For add or upload image via Imperavi Redactor you must be set"
                 . " 'pathToImages' and 'urlToImages'.");
         } 
-        if ($this->addFile && !($this->filesGetAction && $this->pathToFiles && $this->urlToFiles)) {
-            throw new InvalidConfigException("For add file via Imperavi Redactor you must be set 'filesGetAction',"
+        if (($this->addFile || $this->uploadFile) && !($this->pathToFiles && $this->urlToFiles)) {
+            throw new InvalidConfigException("For add or upload file via Imperavi Redactor you must be set"
                 . " 'pathToFiles' and 'urlToFiles'.");
         } 
-        if ($this->uploadImage && !($this->imageUploadAction && $this->pathToImages && $this->urlToImages)) {
-            throw new InvalidConfigException("For upload image via Imperavi Redactor you must be set "
-                . "'imageUploadAction', 'pathToImages' and 'urlToImages'.");
-        }
-        if ($this->uploadFile && !($this->fileUploadAction && $this->pathToFiles && $this->urlToFiles)) {
-            throw new InvalidConfigException("For upload file via Imperavi Redactor you must be set "
-                . "'fileUploadAction', 'pathToFiles' and 'urlToFiles'.");
-        }
         $this->registerTranslations();
     }
     

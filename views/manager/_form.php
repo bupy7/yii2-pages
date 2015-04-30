@@ -27,19 +27,19 @@ if ($module->addImage || $module->uploadImage) {
     $settings['plugins'][] = 'imagemanager';
 }
 if ($module->addImage) {
-    $settings['imageManagerJson'] = Url::to($module->imagesGetAction);
+    $settings['imageManagerJson'] = Url::to(['images-get']);
 }
 if ($module->uploadImage) {
-    $settings['imageUpload'] = Url::to($module->imageUploadAction);
+    $settings['imageUpload'] = Url::to(['image-upload']);
 }
 if ($module->addFile || $module->uploadFile) {
     $settings['plugins'][] = 'filemanager';
 }
 if ($module->addFile) {
-    $settings['fileManagerJson'] = Url::to($module->filesGetAction);
+    $settings['fileManagerJson'] = Url::to(['files-get']);
 }
 if ($module->uploadFile) {
-    $settings['fileUpload'] = Url::to($module->fileUploadAction);
+    $settings['fileUpload'] = Url::to(['file-upload']);
 }
 echo $form->field($model, 'content')->widget(Imperavi::className(), [
     'settings' => $settings,
