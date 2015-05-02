@@ -25,7 +25,7 @@ to the require section of your `composer.json` file.
 Installation
 ------------
 
-1. Add module to your config file:
+**Add module to your config file:**
 
 ```php
 'modules' => [
@@ -51,7 +51,7 @@ exist - change it adding to configuration of module new table name:
 ]
 ```
 
-2. Create new migration
+**Create new migration**
 
 ```php
 ./yii migrate/create bupy7_pages_create_page_table
@@ -77,7 +77,7 @@ Usage
 
 In module two controllers: ```default``` and ```manager```.
 
-```manager``` need for control the pages out of the control panel. You need 
+**manager** need for control the pages out of the control panel. You need 
 protect it controller via ```controllerMap``` or override it for add behavior with ```AccessControl```.
 
 Example:
@@ -107,7 +107,7 @@ Example:
 ],
 ```
 
-```default``` for display of pages to site. You need add url rules to
+**default** for display of pages to site. You need add url rules to
 file of config for getting content via aliases pages.
 
 Example:
