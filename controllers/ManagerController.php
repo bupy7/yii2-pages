@@ -11,7 +11,6 @@ use yii\filters\VerbFilter;
 use bupy7\pages\Module;
 use vova07\imperavi\actions\GetAction as ImperaviGetAction;
 use vova07\imperavi\actions\UploadAction as ImperaviUploadAction;
-use yii\helpers\Url;
 
 /**
  * ManagerController implements the CRUD actions for Page model.
@@ -126,35 +125,10 @@ class ManagerController extends Controller
         } 
         
         $module = Yii::$app->getModule('pages');
-        $settings = [
-            'lang' => Yii::$app->language,
-            'minHeight' => 200,
-            'plugins' => [
-                'fullscreen',
-            ],
-        ];
-        if ($module->addImage || $module->uploadImage) {
-            $settings['plugins'][] = 'imagemanager';
-        }
-        if ($module->addImage) {
-            $settings['imageManagerJson'] = Url::to(['images-get']);
-        }
-        if ($module->uploadImage) {
-            $settings['imageUpload'] = Url::to(['image-upload']);
-        }
-        if ($module->addFile || $module->uploadFile) {
-            $settings['plugins'][] = 'filemanager';
-        }
-        if ($module->addFile) {
-            $settings['fileManagerJson'] = Url::to(['files-get']);
-        }
-        if ($module->uploadFile) {
-            $settings['fileUpload'] = Url::to(['file-upload']);
-        }
         
         return $this->render($id === null ? 'create' : 'update', [
             'model' => $model,
-            'imperaviSettings' => $imperaviSettings,
+            'module' => $module,
         ]);
     }
 
