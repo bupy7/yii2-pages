@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use bupy7\pages\Module;
 use vova07\imperavi\Widget as Imperavi;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model bupy7\pages\models\Page */
