@@ -154,7 +154,7 @@ class ManagerController extends Controller
         
         return $this->render($id === null ? 'create' : 'update', [
             'model' => $model,
-            'settings' => $settings,
+            'imperaviSettings' => $imperaviSettings,
         ]);
     }
 
