@@ -18,7 +18,7 @@ echo $form->field($model, 'alias')->textInput(['maxlength' => 255]);
 echo $form->field($model, 'published')->checkbox();
 
 echo $form->field($model, 'content')->widget(Imperavi::className(), [
-    'settings' => $settings,
+    'settings' => $imperaviSettings,
 ]);
 
 echo $form->field($model, 'title_browser')->textInput(['maxlength' => 255]);
