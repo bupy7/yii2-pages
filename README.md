@@ -54,7 +54,7 @@ exist - change it adding to configuration of module new table name:
 **Run migration**
 
 ```php
-./yii migrate/up --migrationPath=@bupy7/pages/migration
+./yii migrate/up --migrationPath=@bupy7/pages/migrations
 ```
 
 Usage
