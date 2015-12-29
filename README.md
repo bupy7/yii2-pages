@@ -51,26 +51,11 @@ exist - change it adding to configuration of module new table name:
 ]
 ```
 
-**Create new migration**
+**Run migration**
 
 ```php
-./yii migrate/create bupy7_pages_create_page_table
+./yii migrate/up --migrationPath=@bupy7/pages/migration
 ```
-
-In migration file you need extending class from ```\bupy7\pages\migrations\m150429_155009_create_page_table```.
-
-Example:
-
-```php
-<?php
-
-class m150429_162704_bupy7_pages_create_page_table extends \bupy7\pages\migrations\m150429_155009_create_page_table
-{
-
-}
-```
-
-Run migrate ```./yii migrate/up```
 
 Usage
 -----
