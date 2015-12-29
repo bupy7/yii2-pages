@@ -22,6 +22,9 @@ use yii\db\Expression;
  * @property string $meta_description
  * @property string $created_at
  * @property string $updated_at
+ * 
+ * @author Belosludcev Vasilij <bupy765@gmail.com>
+ * @since 1.0.0
  */
 class Page extends ActiveRecord
 {
