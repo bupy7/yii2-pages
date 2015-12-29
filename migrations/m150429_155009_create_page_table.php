@@ -1,8 +1,5 @@
 <?php
 
-namespace bupy7\pages\migrations;
-
-use Yii;
 use yii\db\Schema;
 use yii\db\Migration;
 
@@ -17,7 +14,7 @@ use yii\db\Migration;
  * }
  * 
  * @author Vasilij Belosludcev http://mihaly4.ru
- * @version 1.0.0
+ * @since 1.0.0
  */
 class m150429_155009_create_page_table extends Migration
 {
