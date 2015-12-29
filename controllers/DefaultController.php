@@ -1,4 +1,5 @@
 <?php
+
 namespace bupy7\pages\controllers;
 
 use yii\web\Controller;
@@ -10,7 +11,7 @@ use bupy7\pages\Module;
  * View pages of module.
  * 
  * @author Belosludcev Vasilij http://mihaly4.ru
- * @version 1.0.0
+ * @since 1.0.0
  */
 class DefaultController extends Controller
 {
