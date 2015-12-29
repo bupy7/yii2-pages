@@ -9,7 +9,7 @@ use yii\base\InvalidConfigException;
  * Module implements CRUD with static pages.
  * 
  * @author Vasilij Belosludcev http://mihaly4.ru
- * @version 1.0.0
+ * @since 1.0.0
  */
 class Module extends \yii\base\Module
 {
