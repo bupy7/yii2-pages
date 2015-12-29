@@ -8,6 +8,9 @@ use bupy7\pages\models\Page;
 
 /**
  * PageSearch represents the model behind the search form about `bupy7\pages\models\Page`.
+ * 
+ * @author Belosludcev Vasilij <bupy765@gmail.com>
+ * @since 1.0.0
  */
 class PageSearch extends Page
 {
