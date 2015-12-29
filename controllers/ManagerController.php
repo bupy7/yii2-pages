@@ -14,6 +14,8 @@ use vova07\imperavi\actions\UploadAction as ImperaviUploadAction;
 
 /**
  * ManagerController implements the CRUD actions for Page model.
+ * @author Belosludcev Vasilij <bupy765@gmail.com>
+ * @since 1.0.0
  */
 class ManagerController extends Controller
 {
