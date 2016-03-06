@@ -1,9 +1,9 @@
 <?php
 /**
- * Language 'EN'.
+ * Language 'NL'.
  * 
- * @author Vasilij Belosludcev http://mihaly4.ru
- * @version 1.0.0
+ * @author Patrick Teunissen http://yiiandme.com
+ * @version 1.1.1
  */
 return [
     'ID' => 'ID',
