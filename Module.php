@@ -76,6 +76,7 @@ class Module extends \yii\base\Module
      */
     public $urlToFiles;
     
+    
     /**
      * @inheritdoc
      */
