@@ -98,7 +98,7 @@ class Page extends ActiveRecord
             'content' => Module::t('CONTENT'),
             'title_browser' => Module::t('TITLE_BROWSER'),
             'meta_keywords' => Module::t('META_KEYWORDS'),
-            'meta_description' => Module::t('META_KEYWORDS'),
+            'meta_description' => Module::t('META_DESCRIPTION'),
             'created_at' => Module::t('CREATED_AT'),
             'updated_at' => Module::t('UPDATED_AT'),
         ];
