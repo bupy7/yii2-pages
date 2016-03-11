@@ -4,7 +4,7 @@ yii2-pages
 v1.1.2 [2016-03-11]
 ------------------
 
-- Fix attribute label at `Page` model.
+- Was fixed attribute label at `Page` model.
 
 v1.1.1 [2016-03-07]
 -------------------
