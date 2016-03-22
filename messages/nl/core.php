@@ -3,7 +3,7 @@
  * Language 'NL'.
  * 
  * @author Patrick Teunissen http://yiiandme.com
- * @version 1.1.1
+ * @since 1.1.1
  */
 return [
     'ID' => 'ID',
@@ -23,5 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Opslaan succesvol!',
     'DELETE_SUCCESS' => 'Verwijderen succesvol!',
 ];
-
-
