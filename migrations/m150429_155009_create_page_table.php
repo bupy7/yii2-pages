@@ -4,15 +4,6 @@ use yii\db\Schema;
 use yii\db\Migration;
 
 /**
- * Create {{%page}} table.
- * 
- * Create new migration to your application: ```./yii migrate/create bupy7_pages_create_page_table```.
- * Extended from this class your new migration class, change tableName to module configurations if need, run migrate.
- * 
- * @example
- * class m140429_155666_bupy7_pages_create_page_table extends \bupy7\pages\migrations\m150429_155009_create_page_table {
- * }
- * 
  * @author Vasilij Belosludcev http://mihaly4.ru
  * @since 1.0.0
  */
