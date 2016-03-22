@@ -23,3 +23,4 @@ return [
     'SAVE_SUCCESS' => 'Opslaan succesvol!',
     'DELETE_SUCCESS' => 'Verwijderen succesvol!',
 ];
+
