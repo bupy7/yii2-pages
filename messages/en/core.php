@@ -3,7 +3,7 @@
  * Language 'EN'.
  * 
  * @author Vasilij Belosludcev http://mihaly4.ru
- * @version 1.0.0
+ * @since 1.0.0
  */
 return [
     'ID' => 'ID',
