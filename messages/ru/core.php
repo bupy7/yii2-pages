@@ -3,7 +3,7 @@
  * Language 'RU'.
  * 
  * @author Vasilij Belosludcev http://mihaly4.ru
- * @version 1.0.0
+ * @since 1.0.0
  */
 return [
     'ID' => 'ID',
@@ -23,5 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Сохранение завершилось успешно!',
     'DELETE_SUCCESS' => 'Удаление завершилось успешно!',
 ];
-
-
