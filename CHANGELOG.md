@@ -1,6 +1,12 @@
 yii2-pages
 ==========
 
+v1.1.3 [2016-03-22]
+-------------------
+
+- Added Italian translation (maxxer).
+- Small enhancement.
+
 v1.1.2 [2016-03-11]
 ------------------
 
