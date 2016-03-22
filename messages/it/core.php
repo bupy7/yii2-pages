@@ -23,3 +23,4 @@ return [
     'SAVE_SUCCESS' => 'Salvataggio eseguito con successo!',
     'DELETE_SUCCESS' => 'Cancellazione eseguita con successo!',
 ];
+
