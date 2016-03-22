@@ -3,7 +3,7 @@
  * Language 'IT'.
  * 
  * @author Lorenzo Milesi http://lorenzo.mile.si
- * @version 1.0.0
+ * @since  1.1.3
  */
 return [
     'ID' => 'ID',
