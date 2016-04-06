@@ -29,12 +29,51 @@ $this->params['breadcrumbs'][] = $this->title;
         'id',
         'title',
         'alias',
-        'created_at:datetime',
-        'updated_at:datetime',
+        [
+            'attribute' => 'created_at',
+            'filter' => \kartik\daterange\DateRangePicker::widget([
+                'model' => $searchModel,
+                'attribute' => 'created_at',
+                'convertFormat' => true,
+                'pluginOptions' => [
+                    'timePicker' => true,
+                    'timePickerIncrement' => 10,
+                    'locale' => [
+                        'separator' => ' - ',
+                        'format' => 'Y-m-d H:i'
+                    ]
+                ]
+            ]),
+            'value' => function($model) {
+                /** @var Page $$model */
+                return Yii::$app->formatter->asDatetime($model->created_at);
+            },
+        ],
+        [
+            'attribute' => 'updated_at',
+            'filter' => \kartik\daterange\DateRangePicker::widget([
+                'model' => $searchModel,
+                'attribute' => 'updated_at',
+                'convertFormat' => true,
+                'pluginOptions' => [
+                    'timePicker' => true,
+                    'timePickerIncrement' => 10,
+                    'locale' => [
+                        'separator' => ' - ',
+                        'format' => 'Y-m-d H:i'
+                    ]
+                ]
+            ]),
+            'value' => function($model) {
+                /** @var Page $$model */
+                return Yii::$app->formatter->asDatetime($model->updated_at);
+            },
+        ],
         [
             'attribute' => 'published',
             'filter' => Page::publishedDropDownList(),
             'value' => function($model) {
+                /** @var Page $$model */
                 return Yii::$app->formatter->asBoolean($model->published);
             },
         ],

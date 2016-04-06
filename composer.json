@@ -16,7 +16,8 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "@dev",
-        "vova07/yii2-imperavi-widget": "1.2.2"
+        "vova07/yii2-imperavi-widget": "1.2.2",
+        "kartik-v/yii2-date-range": "dev-master"
     },
     "autoload": {
         "psr-4": {
