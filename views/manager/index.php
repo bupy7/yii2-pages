@@ -66,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ]),
             'value' => function($model) {
                 /** @var Page $$model */
-                return Yii::$app->formatter->asDatetime($model->created_at);
+                return Yii::$app->formatter->asDatetime($model->updated_at);
             },
         ],
         [
