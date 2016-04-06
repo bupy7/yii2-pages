@@ -24,7 +24,7 @@ $settings = [
         'fullscreen',
     ],
 ];
-if (stripos(Yii::$app->language, 'en') !== false) {
+if (stripos(Yii::$app->language, 'en') === false) {
     $settings['lang'] = Yii::$app->language;
 }
 if ($module->addImage || $module->uploadImage) {
