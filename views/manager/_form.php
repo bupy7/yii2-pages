@@ -24,10 +24,9 @@ $settings = [
         'fullscreen',
     ],
 ];
-if (!in_array(Yii::$app->language, ['en', 'en_US', 'en-US'])) {
+if (stripos(Yii::$app->language, 'en') !== false) {
     $settings['lang'] = Yii::$app->language;
 }
-
 if ($module->addImage || $module->uploadImage) {
     $settings['plugins'][] = 'imagemanager';
 }
