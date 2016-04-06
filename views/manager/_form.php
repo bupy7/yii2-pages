@@ -19,12 +19,15 @@ echo $form->field($model, 'alias')->textInput(['maxlength' => 255]);
 echo $form->field($model, 'published')->checkbox();
 
 $settings = [
-    'lang' => Yii::$app->language,
     'minHeight' => 200,
     'plugins' => [
         'fullscreen',
     ],
 ];
+if (!in_array(Yii::$app->language, ['en', 'en_US', 'en-US'])) {
+    $settings['lang'] = Yii::$app->language;
+}
+
 if ($module->addImage || $module->uploadImage) {
     $settings['plugins'][] = 'imagemanager';
 }
