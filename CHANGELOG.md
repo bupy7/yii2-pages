@@ -5,6 +5,7 @@ v1.2.0 [2016-04-08]
 -------------------
 
 - Fixed possibility set up of the custom language at Imperavi redactor.
+- `vova07/yii2-imperavi-widget` updated to 1.2.10.
 
 v1.1.4 [2016-04-06]
 -------------------
