@@ -134,6 +134,21 @@ You can upload and add files/images via Imperavi Redactor, if enable it:
 ],
 ```
 
+Set up the custom language at Imperavi redactor:
+
+```php
+'modules' => [
+    ...
+
+    'pages' => [
+        'class' => 'bupy7\pages\Module',
+        'imperaviLanguage' => 'es',
+    ],
+]
+```
+
+There is all list a languages here: `/vendor/vova07/yii2-imperavi-widget/src/assets/lang`.
+
 License
 -------
 

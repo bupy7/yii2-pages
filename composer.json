@@ -5,7 +5,7 @@
     "keywords": ["yii2", "extension", "static", "pages", "module"],
     "homepage": "https://github.com/bupy7/yii2-pages",
     "license": "BSD-3-Clause",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "authors": [
         {
             "name": "Belosludcev Vasilij",
@@ -15,8 +15,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "yiisoft/yii2-bootstrap": "@dev",
-        "vova07/yii2-imperavi-widget": "1.2.2"
+        "yiisoft/yii2-bootstrap": "*",
+        "vova07/yii2-imperavi-widget": "1.2.10"
     },
     "autoload": {
         "psr-4": {

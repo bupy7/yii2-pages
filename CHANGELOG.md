@@ -1,6 +1,11 @@
 yii2-pages
 ==========
 
+v1.2.0 [2016-04-08]
+-------------------
+
+- Fixed possibility set up of the custom language at Imperavi redactor.
+
 v1.1.4 [2016-04-06]
 -------------------
 

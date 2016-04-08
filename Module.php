@@ -12,26 +12,23 @@ use yii\base\InvalidConfigException;
  * @since 1.0.0
  */
 class Module extends \yii\base\Module
-{
+{  
     
     /**
      * @var string Table name of model \bupy7\pages\models\Page.
      * @see \yii\db\ActiveRecord::tableName()
      */
-    public $tableName = '{{%page}}';
-    
+    public $tableName = '{{%page}}';   
     /**
      * @var boolean Enable ability add images via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToImages' and '$urlToImages'.
      */
-    public $addImage = false;
-    
+    public $addImage = false;  
     /**
      * @var boolean Enable ability upload images via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToImages', '$urlToImages' and '$imageUploadAction'.
      */
-    public $uploadImage = false;
-    
+    public $uploadImage = false;    
     /**
      * @var string Alias of absolute path to directory with images for upload images via Imperavi Redactor. If not 
      * set, then this ability not used.
@@ -39,7 +36,6 @@ class Module extends \yii\base\Module
      * @see \vova07\imperavi\actions\GetAction::$path
      */
     public $pathToImages;
-    
     /**
      * @var string Alias of URL to directory with images for get images uploaded via Imperavi Redactor. If not set, 
      * then this ability not used.
@@ -47,19 +43,16 @@ class Module extends \yii\base\Module
      * @see \vova07\imperavi\actions\GetAction::$url
      */
     public $urlToImages;
-    
     /**
      * @var boolean Enable ability add files via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToFiles' and '$urlToFiles'.
      */
     public $addFile = false;
-    
     /**
      * @var boolean Enable ability upload files via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToFiles', '$urlToFiles' and '$fileUploadAction'.
      */
     public $uploadFile = false;
-    
     /**
      * @var string Alias of absolute path to directory with files for upload files via Imperavi Redactor. If not set, 
      * then this ability not used.
@@ -67,7 +60,6 @@ class Module extends \yii\base\Module
      * @see \vova07\imperavi\actions\GetAction::$path
      */
     public $pathToFiles;
-    
     /**
      * @var string Alias of URL to directory with files for uploaded files via Imperavi Redactor. If not set, then 
      * this ability not used.
@@ -75,7 +67,12 @@ class Module extends \yii\base\Module
      * @see \vova07\imperavi\actions\GetAction::$url
      */
     public $urlToFiles;
-    
+    /**
+     * @var string The language of interface Imperavi redactor.
+     * @see https://imperavi.com/redactor/docs/languages/
+     * @since 1.2.0
+     */
+    public $imperaviLanguage;  
     
     /**
      * @inheritdoc
@@ -91,6 +88,11 @@ class Module extends \yii\base\Module
             throw new InvalidConfigException("For add or upload file via Imperavi Redactor you must be set"
                 . " 'pathToFiles' and 'urlToFiles'.");
         } 
+        if (!$this->imperaviLanguage) {
+            if (stripos(Yii::$app->language, 'en') !== 0) {
+                $this->imperaviLanguage = substr(Yii::$app->language, 0, 2);
+            }
+        }
         $this->registerTranslations();
     }
     
