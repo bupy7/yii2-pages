@@ -1,6 +1,11 @@
 yii2-pages
 ==========
 
+v1.2.1 [2016-11-12]
+-------------------
+
+- Chinese language support: zh-CN & zh-TW (zacksleo).
+
 v1.2.0 [2016-04-08]
 -------------------
 
