@@ -23,5 +23,3 @@ return [
     'SAVE_SUCCESS' => '保存成功！',
     'DELETE_SUCCESS' => '刪除成功！',
 ];
-
-
