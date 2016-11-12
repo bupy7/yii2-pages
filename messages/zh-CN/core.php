@@ -3,6 +3,7 @@
  * Language 'Simplified Chinese'.
  * 
  * @author zacksleo http://zacksleo.github.io
+ * @since 1.2.1
  */
 return [
     'ID' => 'ID',
