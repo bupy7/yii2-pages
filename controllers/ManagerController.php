@@ -9,8 +9,12 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use bupy7\pages\Module;
-use vova07\imperavi\actions\GetAction as ImperaviGetAction;
-use vova07\imperavi\actions\UploadAction as ImperaviUploadAction;
+use vova07\imperavi\actions\GetImagesAction as ImperaviGetAction;
+use vova07\imperavi\actions\GetFilesAction as ImperaviGetFilesAction;
+use vova07\imperavi\actions\UploadFileAction as ImperaviUploadAction;
+
+
+
 
 /**
  * ManagerController implements the CRUD actions for Page model.
@@ -64,7 +68,7 @@ class ManagerController extends Controller
         // add files that have already been uploaded
         if ($module->addFile) {
             $actions['files-get'] = [
-                'class' => ImperaviGetAction::className(),
+                'class' => ImperaviGetFilesAction::className(),
                 'url' => Yii::getAlias($module->urlToFiles),
                 'path' => Yii::getAlias($module->pathToFiles),
                 'type' => ImperaviGetAction::TYPE_FILES,
