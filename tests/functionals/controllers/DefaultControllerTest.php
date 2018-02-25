@@ -11,6 +11,7 @@ class DefaultControllerTest extends TestCase
     {
         $response = Yii::$app->runAction('/pages/default/index', ['page' => 'example-title-1']);
 
+        $this->assertEquals(200, Yii::$app->response->getStatusCode());
         $this->assertContains('Example Content 1', $response);
         $this->assertContains('Example Title Browser 1', $response);
         $this->assertContains('Example Title 1', $response);

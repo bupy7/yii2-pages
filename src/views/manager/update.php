@@ -5,6 +5,7 @@ use bupy7\pages\Module;
 
 /* @var $this yii\web\View */
 /* @var $model bupy7\pages\models\Page */
+/* @var $module bupy7\pages\Module */
 
 $this->title = Module::t('UPDATE');
 $this->params['breadcrumbs'][] = ['label' => Module::t('MODULE_NAME'), 'url' => ['index']];

@@ -12,7 +12,6 @@ use bupy7\pages\Module;
 use vova07\imperavi\actions\GetImagesAction;
 use vova07\imperavi\actions\GetFilesAction;
 use vova07\imperavi\actions\UploadFileAction;
-use vova07\imperavi\actions\UploadAction;
 
 /**
  * ManagerController implements the CRUD actions for Page model.
@@ -73,9 +72,10 @@ class ManagerController extends Controller
         // upload file
         if ($module->uploadFile) {
             $actions['file-upload'] = [
-                'class' => UploadAction::class,
+                'class' => UploadFileAction::class,
                 'url' => Yii::getAlias($module->urlToFiles),
                 'path' => Yii::getAlias($module->pathToFiles),
+                'uploadOnlyImage' => false,
             ];
         }
         

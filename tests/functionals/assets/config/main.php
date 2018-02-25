@@ -28,6 +28,10 @@ return [
             'scriptUrl' => '/index.php',
             'url' => '/',
         ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
         'assetManager' => [
             'basePath' => '@app/assets',
             'baseUrl' => '/',

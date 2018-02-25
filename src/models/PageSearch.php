@@ -4,7 +4,6 @@ namespace bupy7\pages\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use bupy7\pages\models\Page;
 
 /**
  * PageSearch represents the model behind the search form about `bupy7\pages\models\Page`.
@@ -14,7 +13,17 @@ use bupy7\pages\models\Page;
  */
 class PageSearch extends Page
 {
-    
+    /**
+     * @inheritdoc
+     * @since 1.3.0
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        unset($behaviors['sluggable']);
+        return $behaviors;
+    }
+
     /**
      * @inheritdoc
      */
@@ -22,7 +31,7 @@ class PageSearch extends Page
     {
         return [
             [['id', 'published'], 'integer'],
-            [['title', 'alias', 'created_at', 'updated_at'], 'safe'],
+            [['title', 'alias'], 'safe'],
         ];
     }
 
@@ -60,8 +69,6 @@ class PageSearch extends Page
         $query->andFilterWhere([
             'id' => $this->id,
             'published' => $this->published,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

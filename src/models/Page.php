@@ -16,7 +16,7 @@ use yii\db\Expression;
  * @property string $title
  * @property string $alias
  * @property integer $published
- * @property string $content
+ * @property string|null $content
  * @property string|null $title_browser
  * @property string|null $meta_keywords
  * @property string|null $meta_description
@@ -44,13 +44,13 @@ class Page extends ActiveRecord
     public function behaviors()
     {
         return [
-            [
+            'sluggable' => [
                 'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'slugAttribute' => 'alias',
                 'immutable' => true,
             ],
-            [
+            'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'attributes' => [
                     ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
