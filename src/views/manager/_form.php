@@ -9,6 +9,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model bupy7\pages\models\Page */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $module bupy7\pages\Module */
 
 $form = ActiveForm::begin();
 

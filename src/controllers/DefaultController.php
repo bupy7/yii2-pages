@@ -19,6 +19,7 @@ class DefaultController extends Controller
     /**
      * View of page by alias.
      * @param string $page Alias of page.
+     * @return string
      * @see Page::$alias
      */
     public function actionIndex($page)

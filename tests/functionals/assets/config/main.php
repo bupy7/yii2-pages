@@ -1,6 +1,7 @@
 <?php
 
 use bupy7\pages\tests\Env;
+use yii\filters\AccessControl;
 
 $env = Env::getInstance();
 
@@ -10,6 +11,8 @@ return [
     'vendorPath' => __DIR__ . '/../../../../vendor',
     'aliases' => [
         '@bupy7/pages' => __DIR__ . '/../../../../src',
+        '@bower' => '@vendor/bower-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'bootstrap' => ['pages'],
     'modules' => [
@@ -23,6 +26,7 @@ return [
             'cookieValidationKey' => 'wefJDF8sfdsfSDefwqdxj9oq',
             'scriptFile' => __DIR__ . '/index.php',
             'scriptUrl' => '/index.php',
+            'url' => '/',
         ],
         'assetManager' => [
             'basePath' => '@app/assets',

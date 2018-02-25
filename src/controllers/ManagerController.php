@@ -9,9 +9,10 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use bupy7\pages\Module;
-use vova07\imperavi\actions\GetImagesAction as ImperaviGetAction;
-use vova07\imperavi\actions\GetFilesAction as ImperaviGetFilesAction;
-use vova07\imperavi\actions\UploadFileAction as ImperaviUploadAction;
+use vova07\imperavi\actions\GetImagesAction;
+use vova07\imperavi\actions\GetFilesAction;
+use vova07\imperavi\actions\UploadFileAction;
+use vova07\imperavi\actions\UploadAction;
 
 /**
  * ManagerController implements the CRUD actions for Page model.
@@ -40,6 +41,7 @@ class ManagerController extends Controller
      */
     public function actions()
     {
+        /** @var \bupy7\pages\Module $module */
         $module = Yii::$app->getModule('pages');
         
         $actions = [];
@@ -47,16 +49,15 @@ class ManagerController extends Controller
         // add images that have already been uploaded
         if ($module->addImage) {
             $actions['images-get'] = [
-                'class' => ImperaviGetAction::class,
+                'class' => GetImagesAction::class,
                 'url' => Yii::getAlias($module->urlToImages),
                 'path' => Yii::getAlias($module->pathToImages),
-                'type' => ImperaviGetAction::TYPE_IMAGES,
             ];
         }
         // upload image
         if ($module->uploadImage) {
             $actions['image-upload'] = [
-                'class' => ImperaviUploadAction::class,
+                'class' => UploadFileAction::class,
                 'url' => Yii::getAlias($module->urlToImages),
                 'path' => Yii::getAlias($module->pathToImages),
             ];
@@ -64,16 +65,15 @@ class ManagerController extends Controller
         // add files that have already been uploaded
         if ($module->addFile) {
             $actions['files-get'] = [
-                'class' => ImperaviGetAction::class,
+                'class' => GetFilesAction::class,
                 'url' => Yii::getAlias($module->urlToFiles),
                 'path' => Yii::getAlias($module->pathToFiles),
-                'type' => ImperaviGetAction::TYPE_FILES,
             ];
         }
         // upload file
         if ($module->uploadFile) {
             $actions['file-upload'] = [
-                'class' => ImperaviUploadAction::class,
+                'class' => UploadAction::class,
                 'url' => Yii::getAlias($module->urlToFiles),
                 'path' => Yii::getAlias($module->pathToFiles),
             ];
