@@ -1,6 +1,15 @@
 yii2-pages
 ==========
 
+v1.3.0 [2018-02-25]
+-------------------
+
+- Upgrade dependendens.
+- Higher PHP version. Minimal is 5.6.
+- Added tests.
+- Fixed code style.
+- Fixed #9.
+
 v1.2.1 [2016-11-12]
 -------------------
 

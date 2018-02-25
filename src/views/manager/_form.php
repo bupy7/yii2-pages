@@ -45,7 +45,7 @@ if ($module->addFile) {
 if ($module->uploadFile) {
     $settings['fileUpload'] = Url::to(['file-upload']);
 }
-echo $form->field($model, 'content')->widget(Imperavi::className(), [
+echo $form->field($model, 'content')->widget(Imperavi::class, [
     'settings' => $settings,
 ]);
 

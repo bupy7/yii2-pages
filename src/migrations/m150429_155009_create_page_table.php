@@ -2,6 +2,7 @@
 
 use yii\db\Schema;
 use yii\db\Migration;
+use yii\helpers\Inflector;
 
 /**
  * @author Vasilij Belosludcev http://mihaly4.ru
@@ -9,7 +10,9 @@ use yii\db\Migration;
  */
 class m150429_155009_create_page_table extends Migration
 {
-    
+    /**
+     * @var string
+     */
     private $_tableName;
     
     public function init()
@@ -20,6 +23,12 @@ class m150429_155009_create_page_table extends Migration
     
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable(
             $this->_tableName,
             [
@@ -31,12 +40,16 @@ class m150429_155009_create_page_table extends Migration
                 'title_browser' => Schema::TYPE_STRING,
                 'meta_keywords' => Schema::TYPE_STRING . '(200)',
                 'meta_description' => Schema::TYPE_STRING . '(160)',
-                'created_at' => Schema::TYPE_TIMESTAMP . ' NOT NULL DEFAULT "0000-00-00 00:00:00"',
-                'updated_at' => Schema::TYPE_TIMESTAMP . ' NOT NULL DEFAULT "0000-00-00 00:00:00"',
-            ]
+                'created_at' => Schema::TYPE_DATETIME . ' NOT NULL',
+                'updated_at' => Schema::TYPE_DATETIME . ' NOT NULL',
+            ],
+            $tableOptions
         );
-        $this->createIndex('alias', $this->_tableName, ['alias'], true);
-        $this->createIndex('alias_and_published', $this->_tableName, ['alias', 'published']);
+
+        $baseIndex = strtolower(Inflector::classify($this->_tableName)) . '_idx_';
+
+        $this->createIndex($baseIndex . '1', $this->_tableName, ['alias'], true);
+        $this->createIndex($baseIndex . '2', $this->_tableName, ['alias', 'published']);
     }
 
     public function down()

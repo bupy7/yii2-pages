@@ -1,26 +1,49 @@
 {
     "name": "bupy7/yii2-pages",
-    "description": "Module implements CRUD with static pages with uses Imperavi Redactor.",
+    "description": "A static pages module implements CRUD using Imperavi Redactor.",
     "type": "yii2-extension",
     "keywords": ["yii2", "extension", "static", "pages", "module"],
     "homepage": "https://github.com/bupy7/yii2-pages",
     "license": "BSD-3-Clause",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "authors": [
         {
-            "name": "Belosludcev Vasilij",
-            "email": "bupy765@gmail.com",
+            "name": "Belosloodcev Vasily",
+            "email": "vasily.belosloodcev@gmail.com",
             "homepage": "http://mihaly4.ru"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "require": {
-        "yiisoft/yii2": "*",
-        "yiisoft/yii2-bootstrap": "*",
-        "vova07/yii2-imperavi-widget": "1.2.10"
+        "php": "^5.6 || ^7.0",
+        "yiisoft/yii2": "^2.0",
+        "yiisoft/yii2-bootstrap": "^2.0",
+        "vova07/yii2-imperavi-widget": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=5.0 <6.0.0",
+        "satooshi/php-coveralls": "^2.0",
+        "friendsofphp/php-cs-fixer": "^2.2"
     },
     "autoload": {
         "psr-4": {
-            "bupy7\\pages\\": ""
+            "bupy7\\pages\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "bupy7\\pages\\tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test:run": "php vendor/bin/phpunit --no-coverage",
+        "test:run-with-cov": "php vendor/bin/phpunit",
+        "cs:fix": "./vendor/bin/php-cs-fixer fix",
+        "cs:check": "./vendor/bin/php-cs-fixer fix --dry-run --diff"
     }
 }

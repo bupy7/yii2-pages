@@ -34,6 +34,7 @@ Installation
 **Add module to your config file:**
 
 ```php
+'bootstrap' => ['pages'],
 'modules' => [
     ...
 
