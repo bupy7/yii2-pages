@@ -33,18 +33,21 @@ to the require section of your `composer.json` file.
 Installation
 ------------
 
-**Add module to your config file:**
+**Add module in your config file:**
 
 ```php
 'bootstrap' => ['pages'],
+
+...
+
 'modules' => [
     ...
 
-    'pages' => [
-        'class' => 'bupy7\pages\Module',
-    ],
+    'pages' => 'bupy7\pages\Module',
 ]
 ```
+
+> You must add the above config in your console config file to apply migrations.
 
 By default module uses table name '{{%page}}'. If in your database this table is 
 exist - change it adding to configuration of module new table name:
@@ -65,6 +68,8 @@ exist - change it adding to configuration of module new table name:
 ```php
 ./yii migrate/up --migrationPath=@bupy7/pages/migrations
 ```
+
+> Without module in console config file this command will throw an exception.
 
 Usage
 -----
