@@ -1,7 +1,7 @@
 <?php
 /**
  * Language 'EN'.
- * 
+ *
  * @author Vasilij Belosludcev http://mihaly4.ru
  * @since 1.0.0
  */
@@ -23,5 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Saving was completed successfully!',
     'DELETE_SUCCESS' => 'Deleting was completed successfully!',
 ];
-
-

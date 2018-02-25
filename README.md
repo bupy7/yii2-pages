@@ -5,8 +5,10 @@ yii2-pages
 [![Total Downloads](https://poser.pugx.org/bupy7/yii2-pages/downloads)](https://packagist.org/packages/bupy7/yii2-pages)
 [![Latest Unstable Version](https://poser.pugx.org/bupy7/yii2-pages/v/unstable)](https://packagist.org/packages/bupy7/yii2-pages)
 [![License](https://poser.pugx.org/bupy7/yii2-pages/license)](https://packagist.org/packages/bupy7/yii2-pages)
+[![Build Status](https://travis-ci.org/bupy7/yii2-pages.svg?branch=master)](https://travis-ci.org/bupy7/yii2-pages)
+[![Coverage Status](https://coveralls.io/repos/github/bupy7/yii2-pages/badge.svg?branch=master)](https://coveralls.io/github/bupy7/yii2-pages?branch=master)
 
-Module implements CRUD with static pages with uses Imperavi Redactor.
+A static pages module implements CRUD using Imperavi Redactor.
 
 Installation
 ------------

@@ -1,7 +1,7 @@
 <?php
 /**
  * Language 'NL'.
- * 
+ *
  * @author Patrick Teunissen http://yiiandme.com
  * @since 1.1.1
  */
@@ -23,4 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Opslaan succesvol!',
     'DELETE_SUCCESS' => 'Verwijderen succesvol!',
 ];
-

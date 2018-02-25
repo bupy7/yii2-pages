@@ -16,4 +16,4 @@ before_script:
     - travis_retry composer install --prefer-dist --no-interaction
 
 after_script:
-    - vendor/bin/coveralls -v
+    - vendor/bin/php-coveralls -v

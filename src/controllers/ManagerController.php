@@ -124,7 +124,7 @@ class ManagerController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', Module::t('SAVE_SUCCESS'));
             return $this->redirect(['update', 'id' => $model->id]);
-        } 
+        }
         
         $module = Yii::$app->getModule('pages');
         

@@ -9,7 +9,7 @@ use bupy7\pages\Module;
 
 /**
  * View pages of module.
- * 
+ *
  * @author Belosludcev Vasilij http://mihaly4.ru
  * @since 1.0.0
  */
@@ -40,7 +40,7 @@ class DefaultController extends Controller
     protected function findModel($alias)
     {
         $model = Page::find()->where([
-            'alias' => $alias, 
+            'alias' => $alias,
             'published' => Page::PUBLISHED_YES,
         ])->one();
         if ($model !== null) {
@@ -48,6 +48,4 @@ class DefaultController extends Controller
         }
         throw new NotFoundHttpException(Module::t('PAGE_NOT_FOUND'));
     }
-    
 }
-

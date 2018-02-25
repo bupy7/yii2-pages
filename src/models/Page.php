@@ -22,7 +22,7 @@ use yii\db\Expression;
  * @property string|null $meta_description
  * @property string $created_at
  * @property string $updated_at
- * 
+ *
  * @author Belosludcev Vasilij <bupy765@gmail.com>
  * @since 1.0.0
  */
@@ -108,7 +108,7 @@ class Page extends ActiveRecord
      * List values of field 'published' with label.
      * @return array
      */
-    static public function publishedDropDownList()
+    public static function publishedDropDownList()
     {
         $formatter = Yii::$app->formatter;
         return [
@@ -116,5 +116,4 @@ class Page extends ActiveRecord
             self::PUBLISHED_YES => $formatter->asBoolean(self::PUBLISHED_YES),
         ];
     }
-    
 }

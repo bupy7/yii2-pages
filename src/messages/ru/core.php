@@ -1,7 +1,7 @@
 <?php
 /**
  * Language 'RU'.
- * 
+ *
  * @author Vasilij Belosludcev http://mihaly4.ru
  * @since 1.0.0
  */
@@ -23,4 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Сохранение завершилось успешно!',
     'DELETE_SUCCESS' => 'Удаление завершилось успешно!',
 ];
-

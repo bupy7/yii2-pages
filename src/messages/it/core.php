@@ -1,7 +1,7 @@
 <?php
 /**
  * Language 'IT'.
- * 
+ *
  * @author Lorenzo Milesi http://lorenzo.mile.si
  * @since  1.1.3
  */
@@ -23,4 +23,3 @@ return [
     'SAVE_SUCCESS' => 'Salvataggio eseguito con successo!',
     'DELETE_SUCCESS' => 'Cancellazione eseguita con successo!',
 ];
-
