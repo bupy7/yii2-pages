@@ -16,8 +16,10 @@ if (!empty($model->meta_keywords)) {
     $this->registerMetaTag(['content' => Html::encode($model->meta_keywords), 'name' => 'keywords']);
 }
 ?>
-<div class="page-header">
-    <h1><?= Html::encode($model->title); ?></h1>
-</div>
+
+<? if ($model->display_title): ?>
+    <?= strtr(Yii::$app->getModule('pages')->titleTemplate, ['{title}' => Html::encode($model->title)]) ?>
+<? endif; ?>
+
 <div class="clearfix"></div>
 <?= $model->content; ?>

@@ -20,6 +20,10 @@ class Module extends \yii\base\Module
      */
     public $tableName = '{{%page}}';
     /**
+     * @var string Title template
+     */
+    public $titleTemplate = '<div class="page-header"><h1>{title}</h1></div>';
+    /**
      * @var boolean Enable ability add images via Imperavi Redactor? If this property is 'true', you must be
      * set property '$pathToImages' and '$urlToImages'.
      */

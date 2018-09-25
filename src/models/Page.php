@@ -14,6 +14,7 @@ use yii\db\Expression;
  *
  * @property integer $id
  * @property string $title
+ * @property boolean $display_title
  * @property string $alias
  * @property integer $published
  * @property string|null $content
@@ -76,7 +77,7 @@ class Page extends ActiveRecord
     {
         return [
             [['title'], 'required'],
-            [['published'], 'boolean'],
+            [['display_title', 'published'], 'boolean'],
             [['content'], 'string', 'max' => 65535],
             [['title', 'alias', 'title_browser'], 'string', 'max' => 255],
             [['meta_keywords'], 'string', 'max' => 200],
@@ -93,6 +94,7 @@ class Page extends ActiveRecord
         return [
             'id' => Module::t('ID'),
             'title' => Module::t('TITLE'),
+            'display_title' => Module::t('DISPLAY_TITLE'),
             'alias' => Module::t('ALIAS'),
             'published' => Module::t('PUBLISHED'),
             'content' => Module::t('CONTENT'),

@@ -15,6 +15,8 @@ $form = ActiveForm::begin();
 
 echo $form->field($model, 'title')->textInput(['maxlength' => 255]);
 
+echo $form->field($model, 'display_title')->checkbox();
+
 echo $form->field($model, 'alias')->textInput(['maxlength' => 255]);
 
 echo $form->field($model, 'published')->checkbox();
