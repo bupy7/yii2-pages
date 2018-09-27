@@ -21,7 +21,7 @@ if (!empty($model->meta_keywords)) {
     <div class="page-header">
         <h1><?= Html::encode($model->title); ?></h1>
     </div>
-<?php endif ;?>
+<?php endif; ?>
 
 <div class="clearfix"></div>
 

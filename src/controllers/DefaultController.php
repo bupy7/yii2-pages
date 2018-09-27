@@ -41,7 +41,7 @@ class DefaultController extends Controller
     {
         $model = Page::find()->where([
             'alias' => $alias,
-            'published' => Page::PUBLISHED_YES,
+            'published' => true,
         ])->one();
         if ($model !== null) {
             return $model;

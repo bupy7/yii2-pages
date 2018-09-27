@@ -116,7 +116,8 @@ class ManagerController extends Controller
     public function actionUpdate($id = null)
     {
         if ($id === null) {
-            $model = new Page;
+            $model = new Page();
+            $model->display_title = true;
         } else {
             $model = $this->findModel($id);
         }

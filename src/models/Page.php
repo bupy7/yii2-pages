@@ -32,15 +32,6 @@ use yii\db\Expression;
 class Page extends ActiveRecord
 {
     /**
-     * Value of 'published' field where page is not published.
-     */
-    const PUBLISHED_NO = 0;
-    /**
-     * Value of 'published' field where page is published.
-     */
-    const PUBLISHED_YES = 1;
-    
-    /**
      * @inheritdoc
      */
     public function behaviors()
@@ -115,8 +106,8 @@ class Page extends ActiveRecord
     {
         $formatter = Yii::$app->formatter;
         return [
-            self::PUBLISHED_NO => $formatter->asBoolean(self::PUBLISHED_NO),
-            self::PUBLISHED_YES => $formatter->asBoolean(self::PUBLISHED_YES),
+            false => $formatter->asBoolean(false),
+            true => $formatter->asBoolean(true),
         ];
     }
 }
