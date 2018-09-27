@@ -1,15 +1,16 @@
 <?php
 /**
  * Language 'Traditional Chinese'.
- * 
+ *
  * @author zacksleo http://zacksleo.github.io
  * @since 1.2.1
  */
 return [
     'ID' => 'ID',
     'TITLE' => '文章標題',
+    'DISPLAY_TITLE' => '显示标题',
     'ALIAS' => '別名',
-    'PUBLISHED' => '已發布',
+    'PUBLISHED' => '已發布',
     'CONTENT' => '詳情',
     'TITLE_BROWSER' => '頁面標題',
     'META_KEYWORDS' => '頁面關鍵詞',

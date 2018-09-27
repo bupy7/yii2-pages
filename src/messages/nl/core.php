@@ -8,6 +8,7 @@
 return [
     'ID' => 'ID',
     'TITLE' => 'Titel',
+    'DISPLAY_TITLE' => 'Titel weergeven',
     'ALIAS' => 'Alias',
     'PUBLISHED' => 'Gepubliseerd',
     'CONTENT' => 'Inhoud',

@@ -8,6 +8,7 @@
 return [
     'ID' => 'ID',
     'TITLE' => 'Titolo',
+    'DISPLAY_TITLE' => 'Titolo di visualizzazione',
     'ALIAS' => 'Alias',
     'PUBLISHED' => 'Pubblicata',
     'CONTENT' => 'Contenuto',

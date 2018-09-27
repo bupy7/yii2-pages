@@ -17,9 +17,12 @@ if (!empty($model->meta_keywords)) {
 }
 ?>
 
-<? if ($model->display_title): ?>
-    <?= strtr(Yii::$app->getModule('pages')->titleTemplate, ['{title}' => Html::encode($model->title)]) ?>
-<? endif; ?>
+<?php if ($model->display_title) : ?>
+    <div class="page-header">
+        <h1><?= Html::encode($model->title); ?></h1>
+    </div>
+<?php endif ;?>
 
 <div class="clearfix"></div>
+
 <?= $model->content; ?>

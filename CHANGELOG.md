@@ -1,6 +1,12 @@
 yii2-pages
 ==========
 
+v1.4.0 [2018-09-28]
+-------------------
+
+- Added the option to display or hide a header in a model (i-panov, bupy7).
+- Added some tests.
+
 v1.3.1 [2018-02-25]
 -------------------
 

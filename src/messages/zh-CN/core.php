@@ -8,6 +8,7 @@
 return [
     'ID' => 'ID',
     'TITLE' => '文章标题',
+    'DISPLAY_TITLE' => '显示标题',
     'ALIAS' => '别名',
     'PUBLISHED' => '已发布',
     'CONTENT' => '详情',

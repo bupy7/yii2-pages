@@ -24,12 +24,13 @@ use yii\db\Expression;
  * @property string $created_at
  * @property string $updated_at
  *
+ * @since 1.4.0 Added the $display_title property
+ *
  * @author Belosludcev Vasilij <bupy765@gmail.com>
  * @since 1.0.0
  */
 class Page extends ActiveRecord
 {
-    
     /**
      * Value of 'published' field where page is not published.
      */

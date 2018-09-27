@@ -73,7 +73,32 @@ class ManagerControllerTest extends TestCase
         Yii::$app->runAction('/pages/manager/create');
 
         $this->assertEquals(302, Yii::$app->response->getStatusCode());
-        $this->assertEquals('Example Create 3', Page::findOne(['title' => 'Example Create 3'])->title);
+        $page = Page::findOne(['title' => 'Example Create 3']);
+        $this->assertEquals('Example Create 3', $page->title);
+        $this->assertTrue((bool)$page->display_title);
+    }
+
+    public function testCreateWithDisplayTitleAsNo()
+    {
+        $response = Yii::$app->runAction('/pages/manager/create');
+
+        $this->assertEquals(200, Yii::$app->response->getStatusCode());
+        $this->assertContains('Create', $response);
+
+        $_POST = [
+            '_method' => 'POST',
+            'Page' => [
+                'title' => 'Example Create 3',
+                'display_title' => 0,
+            ],
+        ];
+        Yii::$app->request->setBodyParams(null);
+        Yii::$app->runAction('/pages/manager/create');
+
+        $this->assertEquals(302, Yii::$app->response->getStatusCode());
+        $page = Page::findOne(['title' => 'Example Create 3']);
+        $this->assertEquals('Example Create 3', $page->title);
+        $this->assertFalse((bool)$page->display_title);
     }
 
     public function testUpdate()
@@ -96,7 +121,35 @@ class ManagerControllerTest extends TestCase
         Yii::$app->runAction('/pages/manager/update', ['id' => 1]);
 
         $this->assertEquals(302, Yii::$app->response->getStatusCode());
-        $this->assertFalse((bool)Page::findOne(1)->published);
+        $page = Page::findOne(1);
+        $this->assertFalse((bool)$page->published);
+        $this->assertTrue((bool)$page->display_title);
+    }
+
+    public function testUpdateWithDisplayTitleAsNo()
+    {
+        $page = Page::findOne(1);
+
+        $response = Yii::$app->runAction('/pages/manager/update', ['id' => 1]);
+
+        $this->assertEquals(200, Yii::$app->response->getStatusCode());
+        $this->assertContains('Update', $response);
+        $this->assertTrue((bool)$page->published);
+
+        $_POST = [
+            '_method' => 'POST',
+            'Page' => array_merge($page->getAttributes(), [
+                'published' => 0,
+                'display_title' => 0,
+            ])
+        ];
+        Yii::$app->request->setBodyParams(null);
+        Yii::$app->runAction('/pages/manager/update', ['id' => 1]);
+
+        $this->assertEquals(302, Yii::$app->response->getStatusCode());
+        $page = Page::findOne(1);
+        $this->assertFalse((bool)$page->published);
+        $this->assertFalse((bool)$page->display_title);
     }
 
     public function testDelete()

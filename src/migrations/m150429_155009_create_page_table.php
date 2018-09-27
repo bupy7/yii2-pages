@@ -34,7 +34,6 @@ class m150429_155009_create_page_table extends Migration
             [
                 'id' => Schema::TYPE_PK,
                 'title' => Schema::TYPE_STRING . ' NOT NULL',
-                'display_title' => Schema::TYPE_BOOLEAN . ' DEFAULT 1',
                 'alias' => Schema::TYPE_STRING . ' NOT NULL',
                 'published' => Schema::TYPE_BOOLEAN . ' DEFAULT 1',
                 'content' => Schema::TYPE_TEXT,
