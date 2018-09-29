@@ -8,7 +8,7 @@
 return [
     'ID' => 'ID',
     'TITLE' => '文章標題',
-    'DISPLAY_TITLE' => '显示标题',
+    'DISPLAY_TITLE' => '顯示標題',
     'ALIAS' => '別名',
     'PUBLISHED' => '已發布',
     'CONTENT' => '詳情',
