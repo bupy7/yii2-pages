@@ -130,6 +130,8 @@ You can upload and add files/images via Imperavi Redactor, if enable it:
     ...
     
     'pages' => [
+        'class' => 'bupy7\pages\Module',
+        
         ...
 
         'pathToImages' => '@webroot/images',
