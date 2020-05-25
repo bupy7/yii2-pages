@@ -86,6 +86,8 @@ Example:
     ...
 
     'pages' => [
+        'class' => 'bupy7\pages\Module',
+        
         ...
 
         'controllerMap' => [
