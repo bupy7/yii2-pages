@@ -22,7 +22,7 @@ class m180927_200917_add_display_title extends Migration
 
     public function safeUp()
     {
-        $this->addColumn($this->_tableName, 'display_title', Schema::TYPE_BOOLEAN . ' DEFAULT 1');
+        $this->addColumn($this->_tableName, 'display_title', Schema::TYPE_BOOLEAN . ($this->db->driverName === 'pgsql' ? ' DEFAULT TRUE' : ' DEFAULT 1'));
     }
 
     public function safeDown()
