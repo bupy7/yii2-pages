@@ -35,7 +35,7 @@ class m150429_155009_create_page_table extends Migration
                 'id' => Schema::TYPE_PK,
                 'title' => Schema::TYPE_STRING . ' NOT NULL',
                 'alias' => Schema::TYPE_STRING . ' NOT NULL',
-                'published' => Schema::TYPE_BOOLEAN . ' DEFAULT 1',
+                'published' => Schema::TYPE_BOOLEAN . ($this->db->driverName === 'pgsql' ? ' DEFAULT TRUE' : ' DEFAULT 1'),
                 'content' => Schema::TYPE_TEXT,
                 'title_browser' => Schema::TYPE_STRING,
                 'meta_keywords' => Schema::TYPE_STRING . '(200)',
