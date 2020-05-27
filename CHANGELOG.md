@@ -1,6 +1,12 @@
 yii2-pages
 ==========
 
+v1.4.1 [2020-05-27]
+-------------------
+
+- Added support 7.3, 7.4 PHP version.
+- Fixed PostgreSQL bug.
+
 v1.4.0 [2018-09-29]
 -------------------
 
