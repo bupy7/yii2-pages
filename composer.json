@@ -1,5 +1,5 @@
 {
-    "name": "Purt09/yii2-pages",
+    "name": "purt09/yii2-pages",
     "description": "A static pages module implements CRUD using Imperavi Redactor.",
     "type": "yii2-extension",
     "keywords": ["yii2", "extension", "static", "pages", "module"],
@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Purt09\\pages\\": "src"
+            "purt09\\pages\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Purt09\\pages\\tests\\": "tests"
+            "purt09\\pages\\tests\\": "tests"
         }
     },
     "scripts": {
