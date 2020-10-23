@@ -1,11 +1,11 @@
 {
-    "name": "bupy7/yii2-pages",
+    "name": "Purt09/yii2-pages",
     "description": "A static pages module implements CRUD using Imperavi Redactor.",
     "type": "yii2-extension",
     "keywords": ["yii2", "extension", "static", "pages", "module"],
     "homepage": "https://github.com/bupy7/yii2-pages",
     "license": "BSD-3-Clause",
-    "version": "1.4.1",
+    "version": "1.4.3",
     "authors": [
         {
             "name": "Belosloodcev Vasily",
@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "bupy7\\pages\\": "src"
+            "Purt09\\pages\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "bupy7\\pages\\tests\\": "tests"
+            "Purt09\\pages\\tests\\": "tests"
         }
     },
     "scripts": {
