@@ -70,7 +70,7 @@ class Page extends ActiveRecord
         return [
             [['title'], 'required'],
             [['display_title', 'published'], 'boolean'],
-            [['content'], 'string', 'max' => 65535],
+            [['content'], 'string'],
             [['title', 'alias', 'title_browser'], 'string', 'max' => 255],
             [['meta_keywords'], 'string', 'max' => 200],
             [['meta_description'], 'string', 'max' => 160],
